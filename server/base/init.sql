@@ -1,0 +1,11 @@
+CREATE TABLE user (
+    id INT SERIAL PRIMARY KEY,
+    username VARCHAR2(50) NOT NULL UNIQUE,
+    name VARCHAR2(100) NOT NULL,
+);
+
+CREATE TABLE solde (
+    id INT SERIAL PRIMARY KEY,
+    user_id INT NOT NULL REFERENCES user(id),
+    amount DECIMAL(10, 2) NOT NULL,
+);
